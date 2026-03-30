@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 226 100% 97%;
+    --foreground: 247 67% 16%;
+    --card: 226 100% 99%;
+    --card-foreground: 247 67% 16%;
+    --popover: 226 100% 99%;
+    --popover-foreground: 247 67% 16%;
+    --primary: 268 93% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 226 100% 95%;
+    --secondary-foreground: 268 93% 20%;
+    --muted: 226 100% 95%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 226 100% 92%;
+    --accent-foreground: 247 67% 16%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 226 100% 90%;
+    --input: 226 100% 90%;
+    --ring: 268 93% 20%;
+    --radius: 0.5rem;
+    --chart-1: 268 93% 30%;
+    --chart-2: 337 100% 49%;
+    --chart-3: 218 56% 38%;
+    --chart-4: 133 63% 58%;
+    --chart-5: 45 100% 66%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 18% 10%; /* Dark navy-black */
+    --foreground: 210 20% 98%; /* Almost white */
+    --card: 220 18% 15%; /* Dark navy-gray */
+    --card-foreground: 210 20% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 268 80% 60%; /* Your selected primary, vibrant purple */
+    --primary-foreground: 210 20% 98%; /* Light foreground for contrast on purple */
+    --secondary: 220 18% 25%; /* Mid navy-gray */
+    --secondary-foreground: 210 20% 98%;
+    --muted: 220 18% 25%;
+    --muted-foreground: 210 20% 80%; /* Lighter gray for muted text */
+    --accent: 220 18% 30%; /* Lighter navy-gray for hover/accent */
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 63% 31%; /* Darker red */
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 18% 25%;
+    --input: 220 18% 25%;
+    --ring: 268 80% 60%; /* Your primary purple for rings */
+    --chart-1: 268 70% 50%;
+    --chart-2: 337 80% 60%;
+    --chart-3: 218 50% 50%;
+    --chart-4: 133 50% 70%;
+    --chart-5: 45 90% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
