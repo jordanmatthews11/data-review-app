@@ -5,10 +5,11 @@ import { useMemo } from 'react';
 import type { AnalyzedQuestion, CsvData, PhotoGridData } from '@/types';
 import { QuestionCard } from './question-card';
 import { Button } from './ui/button';
-import { FileText, RefreshCw, GalleryVertical, GalleryHorizontal, Map, Wand2, ChevronDown, Loader2 } from 'lucide-react';
+import { FileText, RefreshCw, GalleryVertical, GalleryHorizontal, LayoutGrid, Map, Wand2, ChevronDown, Loader2 } from 'lucide-react';
 import { QCAnalysis } from './qc-analysis';
 import { PhotoGalleryModal } from './photo-gallery-modal';
 import { ShelfViewModal } from './shelf-view-modal';
+import { MassShelfViewModal } from './mass-shelf-view-modal';
 import { MapViewModal } from './map-view-modal';
 import { buildShelfRowsFromCsv } from '@/lib/csv-analysis';
 import { Switch } from './ui/switch';
@@ -161,16 +162,32 @@ export function Dashboard({
               </Button>
             </MapViewModal>
             {shelfRows.length > 0 && (
-              <ShelfViewModal
-                rows={shelfRows}
-                userFlaggedResponses={userFlaggedResponses}
-                onToggleFlagged={onToggleFlagged}
-              >
-                <Button variant="outline" className="self-end">
-                  <GalleryHorizontal className="mr-2 h-4 w-4" />
-                  Shelf View ({shelfRows.length})
-                </Button>
-              </ShelfViewModal>
+              <>
+                <ShelfViewModal
+                  rows={shelfRows}
+                  userFlaggedResponses={userFlaggedResponses}
+                  onToggleFlagged={onToggleFlagged}
+                >
+                  <Button variant="outline" className="self-end max-w-[220px] sm:max-w-none">
+                    <GalleryHorizontal className="mr-2 h-4 w-4 shrink-0" />
+                    <span className="truncate">
+                      Shelf View - 1 response per ({shelfRows.length})
+                    </span>
+                  </Button>
+                </ShelfViewModal>
+                <MassShelfViewModal
+                  rows={shelfRows}
+                  userFlaggedResponses={userFlaggedResponses}
+                  onToggleFlagged={onToggleFlagged}
+                >
+                  <Button variant="outline" className="self-end max-w-[220px] sm:max-w-none">
+                    <LayoutGrid className="mr-2 h-4 w-4 shrink-0" />
+                    <span className="truncate">
+                      Mass Shelf View ({shelfRows.length})
+                    </span>
+                  </Button>
+                </MassShelfViewModal>
+              </>
             )}
             {allPhotos.length > 0 && (
               <PhotoGalleryModal

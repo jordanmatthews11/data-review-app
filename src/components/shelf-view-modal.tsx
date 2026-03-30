@@ -79,7 +79,7 @@ export function ShelfViewModal({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-w-[95vw] w-full h-[90vh] flex flex-col gap-3 p-4 sm:p-6">
         <DialogHeader className="flex-shrink-0 space-y-1 text-left">
-          <DialogTitle>Shelf View</DialogTitle>
+          <DialogTitle>Shelf View - 1 response per</DialogTitle>
           <p className="text-sm text-muted-foreground">
             Row {safeIndex + 1} of {rows.length} · {currentRow?.photos.length ?? 0} photo
             {(currentRow?.photos.length ?? 0) === 1 ? '' : 's'}
